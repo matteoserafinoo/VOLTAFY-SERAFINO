@@ -12,6 +12,10 @@ import android.widget.Spinner;
 public class MainActivity extends AppCompatActivity {
 Button btnInserisci;
 EditText txtTitolo;
+EditText Durata;
+EditText datauscita;
+EditText regista;
+
 GestoreBrani gb;
 String[] generi = {"Pop","Rock","Dance","Rap"};
 Spinner spnGeneri;

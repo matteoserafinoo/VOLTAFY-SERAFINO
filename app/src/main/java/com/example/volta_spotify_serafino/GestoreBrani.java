@@ -3,6 +3,7 @@ package com.example.volta_spotify_serafino;
 import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
+import java.util.SplittableRandom;
 
 public class GestoreBrani {
     ArrayList<Brano> ListaBrani;
@@ -20,12 +21,14 @@ public class GestoreBrani {
         ListaBrani.add(b);
     }
 
-    public void visualiztrackilist()
+    public String visualiztrackilist()
     {
         StringBuilder stBui = new StringBuilder();
-        for (Brano brv : ListaBrani)
-        {
-            stBui.append(brv.toString());
+        for (Brano brv : ListaBrani) {
+            stBui.append(brv.getTitolo()+"-");
+            stBui.append(brv.getAutore()+"\n");
         }
+        return stBui.toString();
     }
+
 }

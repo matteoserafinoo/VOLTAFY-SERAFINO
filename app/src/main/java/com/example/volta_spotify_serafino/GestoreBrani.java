@@ -19,16 +19,16 @@ public class GestoreBrani {
     {
         Brano b = new Brano(titolo);
         ListaBrani.add(b);
+
     }
 
-    public String visualiztrackilist()
+    public StringBuilder visualiztrackilist()
     {
         StringBuilder stBui = new StringBuilder();
         for (Brano brv : ListaBrani) {
             stBui.append(brv.getTitolo()+"-");
-            stBui.append(brv.getAutore()+"\n");
         }
-        return stBui.toString();
+        return stBui;
     }
 
 }

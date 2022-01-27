@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -17,6 +18,8 @@ EditText txtTitolo;
 EditText Durata;
 EditText datauscita;
 EditText regista;
+
+final String TAG = "MainActivity";
 
 GestoreBrani gb;
 String[] generi = {"Pop","Rock","Dance","Rap"};
@@ -40,6 +43,8 @@ Spinner spnGeneri;
 
                 gb.addbrano(txtTitolo.getText().toString());
                 String genSelez = spnGeneri.getSelectedItem().toString();
+                Log.d(TAG,"Abbiamo appena cliccato sul tasto per aggiungere una canzone alla list");
+
             }
         });
         btnAprire.setOnClickListener(new View.OnClickListener() {
@@ -50,8 +55,13 @@ Spinner spnGeneri;
                 Intent i2 = new Intent(getApplicationContext(),MainActivity2.class);
                 i2.putExtra("stringa finale", finalstring.toString());
                 startActivity(i2);
+                Log.d(TAG,"Siamo passati alla seconda activity");
+
             }
         });
-
+    }
+    protected void onStart() {
+        Log.d(TAG,"Siamo all'interno del metodo onStart");
+        super.onStart();
     }
 }
